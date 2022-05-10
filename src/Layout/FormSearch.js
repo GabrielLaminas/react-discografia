@@ -9,14 +9,16 @@ const FormSearch = () => {
         Digite uma palavra chave
       </label>
 
-      <input
-        className='form__inputSearch' 
-        type="search"
-        id="search"
-        name="search"
-      />
+      <div className='form__container__flex'>
+        <input
+          className='form__inputSearch' 
+          type="search"
+          id="search"
+          name="search"
+        />
 
-      <Button name="Procurar" />
+        <Button name="Procurar" />
+      </div>
     </form>
   )
 }

@@ -1,6 +1,5 @@
 .form__container{
   padding: 8px 20px;
-  border: 1px solid red;
 }
 
 .form__container .form__label{
@@ -10,12 +9,23 @@
   font-size: 1.125rem;
 }
 
+.form__container__flex{
+  display: flex;
+  gap: 16px;
+}
+
 .form__container .form__inputSearch{
-  width: 80%;
-  margin-right: 16px;
-  padding: 16px 16px;
+  flex: 4;
+  padding: 16px;
+  display: inline-block;
   font-size: 1rem;
   color: rgba(0, 0, 0, .6);
-  border-radius: 20px;
+  border-radius: 50px;
   border: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .form__container__flex{
+    flex-direction: column;
+  }
 }

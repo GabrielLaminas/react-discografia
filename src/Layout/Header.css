@@ -14,10 +14,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  .header__menu{
-    border: 2px solid red;
-  }
-
   .header__menu .header__logo {
     width: 48px;
     overflow: hidden;
