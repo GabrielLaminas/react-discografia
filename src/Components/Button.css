@@ -1,6 +1,5 @@
 .button{
   flex: 1 1 auto;
-  padding: 16px;
   display: inline-block;
   background-color: #0984e3;
   color: white;
@@ -10,4 +9,10 @@
   border-radius: 50px;
   border: 0;
   cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .button{
+    padding: 16px;
+  }
 }
