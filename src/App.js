@@ -1,8 +1,15 @@
 import React from 'react';
+import Button from './Components/Button';
+import Search from './Components/Search';
+import Header from './Layout/Header';
 
 const App = () => {
   return (
-    <div>App</div>
+    <main>
+      <Header />
+      <Search />
+      <Button name="Procurar" />
+    </main>
   )
 }
 
