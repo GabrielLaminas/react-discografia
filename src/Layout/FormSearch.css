@@ -1,0 +1,21 @@
+.form__container{
+  padding: 8px 20px;
+  border: 1px solid red;
+}
+
+.form__container .form__label{
+  margin-bottom: 8px;
+  display: block;
+  color: rgba(0, 0, 0, .6);
+  font-size: 1.125rem;
+}
+
+.form__container .form__inputSearch{
+  width: 80%;
+  margin-right: 16px;
+  padding: 16px 16px;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, .6);
+  border-radius: 20px;
+  border: 0;
+}

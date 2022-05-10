@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
 
-import Button from './Components/Button';
-import Search from './Components/Search';
+import FormSearch from './Layout/FormSearch';
 import Header from './Layout/Header';
 
 const App = () => {
   return (
     <main className='main__container'>
       <Header />
-      <Search />
-      <Button name="Procurar" />
+      <FormSearch />
     </main>
   )
 }
