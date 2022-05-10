@@ -1,0 +1,30 @@
+.header__menu{
+  padding: 8px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.header__menu .header__title{
+  color: #333333;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 480px) {
+  .header__menu{
+    border: 2px solid red;
+  }
+
+  .header__menu .header__logo {
+    width: 48px;
+    overflow: hidden;
+  }
+  
+  .header__menu .header__title{
+    font-weight: 400;
+    font-size: 2rem;
+  }
+}
