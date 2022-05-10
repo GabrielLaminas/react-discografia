@@ -1,2 +1,3 @@
 # react-discografia
- Texte de vaga React js júnior
+
+Um projeto desenvolvido para uma vaga reactjs
