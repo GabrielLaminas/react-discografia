@@ -1,6 +1,6 @@
 import React from 'react';
 import './FormSearch.css'
-import Button from '../Components/Button';
+import Button from '../../Components/Button';
 
 const FormSearch = () => {
   return (

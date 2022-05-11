@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import Header from './Layout/Header';
-import FormSearch from './Layout/FormSearch';
+import Header from './Layout/Header/Header';
+import FormSearch from './Layout/Form/FormSearch';
 import Albuns from './Layout/Albuns/Albuns';
 
 import { GET_ALBUNS } from './Service/api';
