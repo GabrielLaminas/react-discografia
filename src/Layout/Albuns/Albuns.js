@@ -1,9 +1,11 @@
 import React from 'react';
+import './Albuns.css';
+
 import Tracks from '../Tracks/Tracks';
 
 const Albuns = ({album}) => {
   return (
-    <section>
+    <section className='albuns__container'>
       {album.map((albuns) => (
         <div key={albuns.id}>
           <h2>Álbum: {albuns.name}, {albuns.year}</h2>
