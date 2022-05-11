@@ -12,3 +12,17 @@ export function GET_ALBUNS(){
     }
   })
 }
+
+export function POST_ALBUNS(body){
+  return ({
+    url: urlBase + '/album',
+    option: {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'laminas533@gmail.com'
+      },
+      body: JSON.stringify(body)
+    }
+  })
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import './FormSearch.css'
-import Button from '../../Components/Button';
 
 const FormSearch = () => {
   return (
@@ -17,7 +16,9 @@ const FormSearch = () => {
           name="search"
         />
 
-        <Button name="Procurar" />
+        <button className='form_button'>
+          Procurar
+        </button>
       </div>
     </form>
   )
