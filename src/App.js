@@ -6,9 +6,11 @@ import FormSearch from './Layout/Form/FormSearch';
 import Albuns from './Layout/Albuns/Albuns';
 
 import { GET_ALBUNS } from './Service/api';
+import CreateButton from './Helper/CreateAlbum/CreateButton';
 
 const App = () => {
   const [album, setAlbum] = React.useState([]);
+  const [modal, setModal] = React.useState(null);
 
   React.useEffect(() => {
     async function getAlbuns(){
@@ -29,7 +31,12 @@ const App = () => {
     <main className='main__container'>
       <Header />
       <FormSearch />
+      <CreateButton 
+        text="Criar Álbum" 
+        setModal={setModal} 
+      />
       <Albuns album={album} />
+
     </main>
   )
 }

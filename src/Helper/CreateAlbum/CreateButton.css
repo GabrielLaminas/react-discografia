@@ -1,0 +1,13 @@
+.CreateButton__container{
+  margin: 20px 20px 0 20px;
+}
+
+.CreateButton__container button{
+  padding: 10px 24px;
+  background-color: #27ae60;
+  color: white;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}

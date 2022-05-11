@@ -2,7 +2,6 @@ import React from 'react';
 import './Tracks.css';
 
 const Tracks = ({tracks}) => {
-  console.log(tracks)
   return (
     <div>
       <div className='Tracks__grid'>
@@ -22,4 +21,4 @@ const Tracks = ({tracks}) => {
   )
 }
 
-export default Tracks;
+export default React.memo(Tracks);
