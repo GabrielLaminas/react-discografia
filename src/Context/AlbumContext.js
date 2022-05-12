@@ -25,7 +25,6 @@ const GlobalStore = ({children}) => {
   const filterIdAlbum = (id) => {
     const filterAlbum = 
       album?.find((album) => album.id === Number(id))
-    console.log('Callback filter por id')
     return filterAlbum;
   }
 
