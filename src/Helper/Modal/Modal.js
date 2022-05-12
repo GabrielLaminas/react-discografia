@@ -1,9 +1,13 @@
 import React from 'react';
 import './Modal.css';
 
+import { useNavigate } from 'react-router-dom';
+
 import { POST_ALBUNS } from '../../Service/api';
 
 const Modal = ({setModal}) => {
+  const navigate = useNavigate();
+
   const [body, setBody] = React.useState({
     name: '',
     year: ''
@@ -36,7 +40,7 @@ const Modal = ({setModal}) => {
       console.log(error)
     }
     finally{
-      setModal(false)
+      setModal(false);
     }
   }
 
@@ -69,7 +73,8 @@ const Modal = ({setModal}) => {
             className='Buttons--cancel'
             onClick={(e) => {
               e.preventDefault();
-              setModal(false)
+              setModal(false);
+              navigate("/");
             }}
           >
             Cancelar

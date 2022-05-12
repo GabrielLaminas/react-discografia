@@ -9,7 +9,7 @@ const Albuns = ({album}) => {
     <section className='albuns__container'>
       {album?.map((albuns) => (
         <Link 
-          to="/discografia" 
+          to={`/discografia/${albuns.id}`} 
           key={albuns.id} 
           className="albuns__album"
         >
