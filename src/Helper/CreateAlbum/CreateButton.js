@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CreateButton.css';
 
 const CreateButton = ({text}) => {
@@ -9,7 +10,9 @@ const CreateButton = ({text}) => {
   
   return (
     <div className='CreateButton__container'>
-      <button>{text}</button>
+      <Link to="/discografia">
+        {text}
+      </Link>
     </div>
   )
 }

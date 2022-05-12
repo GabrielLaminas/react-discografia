@@ -2,11 +2,12 @@
   margin: 16px 20px;
 }
 
-.CreateButton__container button{
+.CreateButton__container a{
   padding: 10px 24px;
   background-color: #27ae60;
   color: white;
   font-size: 1rem;
+  text-decoration: none;
   border: 0;
   border-radius: 4px;
   cursor: pointer;
