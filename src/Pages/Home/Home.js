@@ -7,28 +7,15 @@ import CreateButton from '../../Helper/CreateAlbum/CreateButton';
 import Modal from '../../Helper/Modal/Modal';
 import Albuns from '../../Layout/Albuns/Albuns';
 
-import { GET_ALBUNS } from '../../Service/api';
+import { GlobalContext } from '../../Context/AlbumContext';
 
 const Home = () => {
-  const [album, setAlbum] = React.useState([]);
-  const [modal, setModal] = React.useState(false);
+  const { 
+    album,
+    modal, 
+    setModal 
+  } = React.useContext(GlobalContext);
 
-  React.useEffect(() => {
-    async function getAlbuns(){
-      try {
-        const { url, option } = GET_ALBUNS();
-        const response = await fetch(url, option);
-        const { data } = await response.json();
-        setAlbum(data);
-        console.log(data)
-      } 
-      catch (error) {
-        console.log(error)
-      }
-    }
-    getAlbuns();
-  }, []);
-  console.log('texte', modal)
   return (
     <>
       {modal && <Modal setModal={setModal} />}
@@ -36,11 +23,8 @@ const Home = () => {
       <main className='main__container'>
         <Header />
         <FormSearch />
-        <CreateButton
-          text="Criar Álbum"
-          setModal={setModal} 
-        />
-        <Albuns album={album} />
+        <CreateButton text="Criar Álbum" />
+        {album && <Albuns album={album} /> }
       </main>
     </>
   )
