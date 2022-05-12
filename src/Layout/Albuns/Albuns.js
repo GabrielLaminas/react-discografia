@@ -7,7 +7,7 @@ const Albuns = ({album}) => {
   return (
     <section className='albuns__container'>
       {album?.map((albuns) => (
-        <div key={albuns.id}>
+        <div key={albuns.id} className="albuns__album">
           <h2>Álbum: {albuns.name}, {albuns.year}</h2>
           <Tracks tracks={albuns?.tracks} />
         </div>

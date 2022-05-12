@@ -1,7 +1,26 @@
 .albuns__container{
+  height: 50vh;
   padding: 8px 20px;
+  overflow-y: scroll;
+}
+
+.albuns__container::-webkit-scrollbar{
+  width: 6px;
+}
+.albuns__container::-webkit-scrollbar-thumb{
+  background-color: rgba(155, 155, 155, .4);
+  border-radius: 10px;
+}
+
+.albuns__container .albuns__album{
+  padding: 0 10px;
+}
+
+.albuns__container .albuns__album:hover{
+  background-color: rgba(0, 0, 0, .15);
+  cursor: pointer;
 }
 
 .albuns__container h2{
-  margin: 8px 0;
+  margin: 16px 0;
 }

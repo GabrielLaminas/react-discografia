@@ -1,8 +1,5 @@
 .header__menu{
-  padding: 8px 20px;
-  position: sticky;
-  top: 0;
-  left: 0;
+  padding: 0px 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

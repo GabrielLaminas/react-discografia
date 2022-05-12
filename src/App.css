@@ -1,7 +1,5 @@
 .main__container{
   max-width: 960px;
-  max-height: 85vh;
-  overflow-y: scroll;
   position: relative;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, .7);

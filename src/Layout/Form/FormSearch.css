@@ -1,9 +1,5 @@
 .form__container{
   padding: 8px 20px;
-  position: sticky;
-  top: 123px;
-  left: 0;
-  background-color: transparent;
 }
 
 .form__container .form__label{

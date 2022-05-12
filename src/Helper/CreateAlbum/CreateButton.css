@@ -1,8 +1,5 @@
 .CreateButton__container{
-  padding: 20px 20px 0 20px;
-  position: sticky;
-  top: 221px;
-  left: 0;
+  margin: 16px 20px;
 }
 
 .CreateButton__container button{

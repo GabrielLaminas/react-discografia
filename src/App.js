@@ -20,6 +20,7 @@ const App = () => {
         const response = await fetch(url, option);
         const { data } = await response.json();
         setAlbum(data);
+        console.log(data)
       } 
       catch (error) {
         console.log(error)
@@ -28,7 +29,7 @@ const App = () => {
     getAlbuns();
   }, []);
 
-  console.log(album)
+  //console.log(album)
 
   return (
     <>

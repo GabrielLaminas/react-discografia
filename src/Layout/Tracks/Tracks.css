@@ -1,9 +1,9 @@
 .Tracks__grid{
   display: grid;
   grid-template-columns: 1fr 7fr 1fr;
-  grid-template-rows: auto;
 }
 
 .Tracks__grid p{
+  margin: 6px 0;
   font-size: 1.125rem;
 }
