@@ -1,14 +1,15 @@
 import React from 'react';
 import './CreateButton.css';
 
-const CreateButton = ({text, setModal}) => {
+const CreateButton = ({text}) => {
+  /*
   function handleClick(){
     setModal((modal) => !modal)
-  }
+  }*/
   
   return (
     <div className='CreateButton__container'>
-      <button onClick={handleClick}>{text}</button>
+      <button>{text}</button>
     </div>
   )
 }
