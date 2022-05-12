@@ -4,9 +4,10 @@ import './App.css';
 import Header from './Layout/Header/Header';
 import FormSearch from './Layout/Form/FormSearch';
 import Albuns from './Layout/Albuns/Albuns';
+import CreateButton from './Helper/CreateAlbum/CreateButton';
 
 import { GET_ALBUNS } from './Service/api';
-import CreateButton from './Helper/CreateAlbum/CreateButton';
+import Modal from './Helper/Modal/Modal';
 
 const App = () => {
   const [album, setAlbum] = React.useState([]);
@@ -27,17 +28,22 @@ const App = () => {
     getAlbuns();
   }, []);
 
-  return (
-    <main className='main__container'>
-      <Header />
-      <FormSearch />
-      <CreateButton 
-        text="Criar Álbum" 
-        setModal={setModal} 
-      />
-      <Albuns album={album} />
+  console.log(album)
 
-    </main>
+  return (
+    <>
+      {modal && <Modal setModal={setModal} />}
+
+      <main className='main__container'>
+        <Header />
+        <FormSearch />
+        <CreateButton 
+          text="Criar Álbum" 
+          setModal={setModal} 
+        />
+        <Albuns album={album} />
+      </main>
+    </>
   )
 }
 

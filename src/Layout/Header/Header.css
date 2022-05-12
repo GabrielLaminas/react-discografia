@@ -1,10 +1,14 @@
 .header__menu{
   padding: 8px 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, .1);
 }
 
 .header__menu .header__title{

@@ -17,7 +17,7 @@ export function POST_ALBUNS(body){
   return ({
     url: urlBase + '/album',
     option: {
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-type': 'application/json',
         'Authorization': 'laminas533@gmail.com'
