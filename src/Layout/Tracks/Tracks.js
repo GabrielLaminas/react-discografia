@@ -12,7 +12,7 @@ const Tracks = ({tracks}) => {
 
       {tracks?.map((track) => (
         <div key={track.id} className='Tracks__grid'>
-          <p>{track.id}</p>
+          <p>{track.number}</p>
           <p>{track.title}</p>
           <p>{track.duration}</p>
         </div>

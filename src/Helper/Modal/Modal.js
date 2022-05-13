@@ -33,14 +33,15 @@ const Modal = ({setModal}) => {
           year: body.year,
         });
         const response = await fetch(url, option);
-        const data = await response.json();
-        console.log(data)
+        
+        if(response.ok){
+          const { id } = await response.json();
+          setModal(false);
+          navigate(`/discografia/${id}`);
+        }
       }
     } catch (error) {
       console.log(error)
-    }
-    finally{
-      setModal(false);
     }
   }
 

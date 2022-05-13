@@ -39,3 +39,17 @@ export function DELETE_ALBUM(id){
     }
   })
 }
+
+export function ADICIONAR_FAIXA(body){
+  return ({
+    url: urlBase + '/track',
+    option: {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'laminas533@gmail.com'
+      },
+      body: JSON.stringify(body)
+    }
+  })
+}
