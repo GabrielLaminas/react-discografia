@@ -1,7 +1,7 @@
 import React from 'react';
 import './FormSearch.css'
 
-const FormSearch = () => {
+const FormSearch = ({search, setSearch}) => {
   return (
     <form className='form__container'>
       <label htmlFor='search' className='form__label'>
@@ -14,6 +14,8 @@ const FormSearch = () => {
           type="search"
           id="search"
           name="search"
+          value={search}
+          onChange={({target}) => setSearch(target.value)}
         />
 
         <button className='form_button'>

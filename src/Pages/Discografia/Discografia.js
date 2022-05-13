@@ -4,21 +4,30 @@ import '../Home/Home.css';
 import './Discografia.css';
 
 import { Link, useParams } from 'react-router-dom';
-import { GlobalContext } from '../../Context/AlbumContext';
 import Tracks from '../../Layout/Tracks/Tracks';
 
 import ModalDelete from '../../Helper/ModalDelete/ModalDelete';
 import ModalAddFaixa from '../../Helper/ModalAddFaixa/ModalAddFaixa';
 import ModalDeleteFaixa from '../../Helper/ModalDeleteFaixa/ModalDeleteFaixa';
 
+import useFetch from '../../hook/useFetch';
+
 const Discografia = () => {
-  const { 
-    modal, 
-    setModal, 
-    filterIdAlbum 
-  } = React.useContext(GlobalContext);
   const { id } = useParams();
-  const dataAlbum = filterIdAlbum?.(id);
+  const { discografia } = useFetch('');
+  const [modal, setModal] = React.useState({
+    status: false,
+    type: '',
+  });
+
+  const filterIdAlbum = React.useCallback(() => {
+    const filterAlbum = 
+      discografia?.data.find((album) => album.id === Number(id))
+    console.log('filterIdAlbum calback')
+    return filterAlbum;
+  }, [discografia, id])
+
+  const dataAlbum = filterIdAlbum();
 
   return (
     <>
@@ -53,7 +62,7 @@ const Discografia = () => {
             Deletar Faixa
           </button>
         </section>
-        
+
         {dataAlbum && (
           <section className='albuns__container'>
             <h2>

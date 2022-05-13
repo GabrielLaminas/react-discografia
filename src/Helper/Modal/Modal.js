@@ -7,7 +7,6 @@ import { POST_ALBUNS } from '../../Service/api';
 
 const Modal = ({setModal}) => {
   const navigate = useNavigate();
-
   const [body, setBody] = React.useState({
     name: '',
     year: ''

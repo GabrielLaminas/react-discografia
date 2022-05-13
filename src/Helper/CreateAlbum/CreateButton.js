@@ -1,9 +1,7 @@
 import React from 'react';
-import { GlobalContext } from '../../Context/AlbumContext';
 import './CreateButton.css';
 
-const CreateButton = ({text}) => {
-  const { setModal } = React.useContext(GlobalContext);
+const CreateButton = ({text, setModal}) => {
 
   function handleModal(e){
     e.preventDefault()

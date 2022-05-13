@@ -7,14 +7,15 @@ import CreateButton from '../../Helper/CreateAlbum/CreateButton';
 import Modal from '../../Helper/Modal/Modal';
 import Albuns from '../../Layout/Albuns/Albuns';
 
-import { GlobalContext } from '../../Context/AlbumContext';
+import useFetch from '../../hook/useFetch';
 
 const Home = () => {
-  const { 
-    album,
-    modal, 
-    setModal,
-  } = React.useContext(GlobalContext);
+  const [search, setSearch] = React.useState('');
+  const { discografia } = useFetch(search);
+  const [modal, setModal] = React.useState({
+    status: false,
+    type: '',
+  });
 
   return (
     <>
@@ -22,9 +23,9 @@ const Home = () => {
 
       <main className='main__container'>
         <Header />
-        <FormSearch />
-        <CreateButton text="Criar Álbum" />
-        {album && <Albuns album={album} /> }
+        <FormSearch search={search} setSearch={setSearch} />
+        <CreateButton text="Criar Álbum" setModal={setModal} />
+        {discografia?.data && <Albuns album={discografia?.data} /> }
       </main>
     </>
   )
