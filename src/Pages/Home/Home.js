@@ -13,7 +13,7 @@ const Home = () => {
   const { 
     album,
     modal, 
-    setModal 
+    setModal,
   } = React.useContext(GlobalContext);
 
   return (

@@ -4,7 +4,7 @@ import { GET_ALBUNS } from "../Service/api";
 export const GlobalContext = React.createContext();
 
 const GlobalStore = ({children}) => {
-  const [album, setAlbum] = React.useState(null);
+  const [album, setAlbum] = React.useState([]);
   const [modal, setModal] = React.useState(false);
 
   React.useEffect(() => {
@@ -16,7 +16,7 @@ const GlobalStore = ({children}) => {
         setAlbum(data);
       } 
       catch (error) {
-        console.log(error)
+        console.log(error);
       }
     }
     getAlbuns();

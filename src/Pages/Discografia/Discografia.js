@@ -1,36 +1,30 @@
 import React from 'react';
 import '../../Layout/Albuns/Albuns.css';
+import '../Home/Home.css';
+import './Discografia.css';
+
 import { useParams } from 'react-router-dom';
 import { GlobalContext } from '../../Context/AlbumContext';
-import '../Home/Home.css';
-
 import Tracks from '../../Layout/Tracks/Tracks';
-import CreateButton from '../../Helper/CreateAlbum/CreateButton';
-import Modal from '../../Helper/Modal/Modal';
+
+import ModalDelete from '../../Helper/ModalDelete/ModalDelete';
 
 const Discografia = () => {
-  const { 
-    filterIdAlbum, 
-    modal, 
-    setModal 
-  } = React.useContext(GlobalContext);
+  const { modal, setModal, filterIdAlbum } = React.useContext(GlobalContext);
   const { id } = useParams();
   const dataAlbum = filterIdAlbum(id);
 
   return (
     <>
-      {modal && <Modal setModal={setModal} />}
-
+      {modal && <ModalDelete id={id} setModal={setModal} />}
       <main className='main__container'>
-        <header style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between'
-        }}
-        >
+        <header className='Header__discografia'>
           <h1>Discografia</h1>
-          <CreateButton text="Deletar Álbum" />
+          <button onClick={() => setModal(!modal)}>
+            Deletar Álbum
+          </button>
         </header>
+        
         {dataAlbum && (
           <section className='albuns__container'>
             <h2>

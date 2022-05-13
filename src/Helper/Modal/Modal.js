@@ -69,6 +69,10 @@ const Modal = ({setModal}) => {
         />
 
         <div className='Modal__container__buttons'>
+          <button className='Buttons--confirm'>
+            Criar
+          </button>
+
           <button 
             className='Buttons--cancel'
             onClick={(e) => {
@@ -78,9 +82,6 @@ const Modal = ({setModal}) => {
             }}
           >
             Cancelar
-          </button>
-          <button className='Buttons--confirm'>
-            Criar Álbum
           </button>
         </div>
       </form>

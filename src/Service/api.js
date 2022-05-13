@@ -26,3 +26,16 @@ export function POST_ALBUNS(body){
     }
   })
 }
+
+export function DELETE_ALBUM(id){
+  return ({
+    url: urlBase + `/album/${Number(id)}`,
+    option: {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'laminas533@gmail.com'
+      }
+    }
+  })
+}
