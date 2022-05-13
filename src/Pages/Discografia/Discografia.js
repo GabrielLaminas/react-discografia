@@ -7,8 +7,9 @@ import { Link, useParams } from 'react-router-dom';
 import { GlobalContext } from '../../Context/AlbumContext';
 import Tracks from '../../Layout/Tracks/Tracks';
 
-//import ModalDelete from '../../Helper/ModalDelete/ModalDelete';
+import ModalDelete from '../../Helper/ModalDelete/ModalDelete';
 import ModalAddFaixa from '../../Helper/ModalAddFaixa/ModalAddFaixa';
+import ModalDeleteFaixa from '../../Helper/ModalDeleteFaixa/ModalDeleteFaixa';
 
 const Discografia = () => {
   const { 
@@ -17,12 +18,13 @@ const Discografia = () => {
     filterIdAlbum 
   } = React.useContext(GlobalContext);
   const { id } = useParams();
-  const dataAlbum = filterIdAlbum(id);
+  const dataAlbum = filterIdAlbum?.(id);
 
   return (
     <>
-      {/*modal && <ModalDelete id={id} setModal={setModal} />*/}
-      {modal && <ModalAddFaixa id={id} setModal={setModal} />}
+      {modal.type === 'deleteAlbum' && <ModalDelete id={id} setModal={setModal} />}
+      {modal.type ==='createFaixa' && <ModalAddFaixa id={id} setModal={setModal} />}
+      {modal.type ==='deleteFaixa' && <ModalDeleteFaixa id={id} setModal={setModal} />}
 
       <main className='main__container'>
         <header className='Header__discografia'>
@@ -33,21 +35,21 @@ const Discografia = () => {
         <section className='Section__discografia'>
           <button  
             style={{backgroundColor: '#d63031'}}
-            onClick={() => setModal(!modal)}
+            onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteAlbum'}))}
           >
             Deletar Álbum
           </button>
 
           <button 
             style={{backgroundColor: '#0984E3'}}
-            onClick={() => setModal(!modal)}
+            onClick={() => setModal((modal) => ({state: !modal.state, type: 'createFaixa'}))}
           >
             Adicionar Faixa
           </button>
 
           <button
             style={{backgroundColor: '#d63031'}} 
-            onClick={() => setModal(!modal)}>
+            onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteFaixa'}))}>
             Deletar Faixa
           </button>
         </section>

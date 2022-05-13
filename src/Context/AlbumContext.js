@@ -5,7 +5,10 @@ export const GlobalContext = React.createContext();
 
 const GlobalStore = ({children}) => {
   const [album, setAlbum] = React.useState([]);
-  const [modal, setModal] = React.useState(false);
+  const [modal, setModal] = React.useState({
+    status: false,
+    type: '',
+  });
 
   React.useEffect(() => {
     async function getAlbuns(){

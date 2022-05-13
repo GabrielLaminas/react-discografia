@@ -8,6 +8,7 @@ const CreateButton = ({text}) => {
   function handleModal(e){
     e.preventDefault()
     setModal((modal) => !modal)
+    setModal((modal) => ({state: !modal.state, type: 'createAlbum'}))
   }
 
   return (

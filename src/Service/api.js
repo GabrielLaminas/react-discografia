@@ -53,3 +53,16 @@ export function ADICIONAR_FAIXA(body){
     }
   })
 }
+
+export function DELETE_FAIXA(id){
+  return ({
+    url: urlBase + `/track/${Number(id)}`,
+    option: {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'laminas533@gmail.com'
+      }
+    } 
+  })
+}

@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <>
-      {modal && <Modal setModal={setModal} />}
+      {modal.type === 'createAlbum' && <Modal setModal={setModal} />}
 
       <main className='main__container'>
         <Header />
