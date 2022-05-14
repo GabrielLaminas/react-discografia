@@ -45,9 +45,24 @@ const ModalDeleteFaixa = ({id, setModal}) => {
         />
 
         <div className='ModalDeleteFaixa__container__buttons'>
-          <button className='Button--confirm'>
-            Confirmar
-          </button>
+          {idFaixa 
+          ? (
+              <button className='Button--confirm'>
+                Confirmar
+              </button>
+            )
+          : (
+              <button
+                style={{
+                  opacity: 0.5, 
+                  pointerEvents: 'none'
+                }}
+                className='Button--confirm'
+              >
+                Confirmar
+              </button>
+            )
+          }
           
           <button 
             className='Button--cancel'

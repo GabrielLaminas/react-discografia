@@ -69,9 +69,24 @@ const Modal = ({setModal}) => {
         />
 
         <div className='Modal__container__buttons'>
-          <button className='Buttons--confirm'>
-            Criar
-          </button>
+          {body.name && body.year 
+          ? (
+              <button className='Buttons--confirm'>
+                Criar
+              </button>
+            )
+          : (
+            <button
+              style={{
+                opacity: 0.5, 
+                pointerEvents: 'none'
+              }}
+              className='Buttons--confirm'
+            >
+              Criar
+            </button>
+          )
+          }
 
           <button 
             className='Buttons--cancel'
