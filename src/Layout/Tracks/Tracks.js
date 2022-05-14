@@ -15,7 +15,7 @@ const Tracks = ({tracks}) => {
         )
       : (
           <p style={{color: '#0984e3'}}>
-            Não possui faixas, adicione!
+            Ainda não possui faixas.
           </p>
         )
       }
