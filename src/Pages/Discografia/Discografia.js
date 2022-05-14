@@ -11,10 +11,11 @@ import ModalAddFaixa from '../../Helper/ModalAddFaixa/ModalAddFaixa';
 import ModalDeleteFaixa from '../../Helper/ModalDeleteFaixa/ModalDeleteFaixa';
 
 import useFetch from '../../hook/useFetch';
+import Loading from '../../Helper/Loading/Loading';
 
 const Discografia = () => {
   const { id } = useParams();
-  const { discografia } = useFetch('');
+  const { discografia, loading } = useFetch('');
   const [modal, setModal] = React.useState({
     status: false,
     type: '',
@@ -63,7 +64,9 @@ const Discografia = () => {
             </button>
           )}
         </section>
-
+        
+        {loading && <Loading />}
+        
         {dataAlbum && (
           <section className='albuns__container'>
             <h2>

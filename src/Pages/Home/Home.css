@@ -1,6 +1,8 @@
 .main__container{
   max-width: 960px;
+  height: calc(100vh - 50px);
   position: relative;
   margin: 0 auto;
+  overflow: hidden;
   background-color: rgba(255, 255, 255, .7);
 }

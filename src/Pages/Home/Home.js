@@ -8,10 +8,11 @@ import Modal from '../../Helper/Modal/Modal';
 import Albuns from '../../Layout/Albuns/Albuns';
 
 import useFetch from '../../hook/useFetch';
+import Loading from '../../Helper/Loading/Loading';
 
 const Home = () => {
   const [search, setSearch] = React.useState('');
-  const { discografia } = useFetch(search);
+  const { discografia, loading } = useFetch(search);
   const [modal, setModal] = React.useState({
     status: false,
     type: '',
@@ -25,6 +26,7 @@ const Home = () => {
         <Header />
         <FormSearch search={search} setSearch={setSearch} />
         <CreateButton text="Criar Álbum" setModal={setModal} />
+        {loading && <Loading />}
         {discografia?.data && <Albuns album={discografia?.data} /> }
       </main>
     </>
