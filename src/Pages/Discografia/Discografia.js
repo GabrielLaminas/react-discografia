@@ -20,12 +20,10 @@ const Discografia = () => {
     type: '',
   });
 
-  const filterIdAlbum = React.useCallback(() => {
-    const filterAlbum = 
-      discografia?.data.find((album) => album.id === Number(id))
-    console.log('filterIdAlbum calback')
+  function filterIdAlbum(){
+    const filterAlbum = discografia?.data.find((album) => album.id === Number(id))
     return filterAlbum;
-  }, [discografia, id])
+  }
 
   const dataAlbum = filterIdAlbum();
 
@@ -56,11 +54,14 @@ const Discografia = () => {
             Adicionar Faixa
           </button>
 
-          <button
-            style={{backgroundColor: '#d63031'}} 
-            onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteFaixa'}))}>
-            Deletar Faixa
-          </button>
+          {dataAlbum?.tracks.length > 0 && (
+            <button
+              style={{backgroundColor: '#d63031'}} 
+              onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteFaixa'}))}
+            >
+              Deletar Faixa
+            </button>
+          )}
         </section>
 
         {dataAlbum && (

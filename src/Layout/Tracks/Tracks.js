@@ -2,13 +2,23 @@ import React from 'react';
 import './Tracks.css';
 
 const Tracks = ({tracks}) => {
+
   return (
     <div>
-      <div className='Tracks__grid'>
-        <p>Nº</p>
-        <p>Faixa</p>
-        <p>Duração</p>
-      </div>
+      {tracks.length > 0 
+      ? (
+          <div className='Tracks__grid'>
+            <p>Nº</p>
+            <p>Faixa</p>
+            <p>Duração</p>
+          </div>
+        )
+      : (
+          <p style={{color: '#0984e3'}}>
+            Não possui faixas, adicione!
+          </p>
+        )
+      }
 
       {tracks?.map((track) => (
         <div key={track.id} className='Tracks__grid'>
@@ -21,4 +31,4 @@ const Tracks = ({tracks}) => {
   )
 }
 
-export default React.memo(Tracks);
+export default Tracks;
