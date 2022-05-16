@@ -24,7 +24,7 @@ const Home = () => {
 
       <main className='main__container'>
         <Header />
-        <FormSearch search={search} setSearch={setSearch} />
+        <FormSearch setSearch={setSearch} />
         <CreateButton text="Criar Álbum" setModal={setModal} />
         {loading && <Loading />}
         {discografia?.data && <Albuns album={discografia?.data} /> }
