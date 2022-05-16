@@ -1,5 +1,5 @@
 .albuns__container{
-  height: 45vh;
+  height: calc(100vh - 330px); 
   padding: 8px 20px;
   overflow-y: scroll;
 }
@@ -28,7 +28,10 @@
   margin: 16px 0;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
+  .albuns__container{
+    height: calc(100vh - 340px); 
+  }
   .albuns__container h2{
     font-size: 1.25rem;
   }
