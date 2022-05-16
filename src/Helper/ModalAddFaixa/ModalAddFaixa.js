@@ -7,9 +7,16 @@ import Input from '../../Components/Input/Input';
 import Modal from '../../Components/Modal/Modal';
 
 const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
+  const setNumber = (numberTracks) => {
+    if(numberTracks.length > 0){
+      return numberTracks[numberTracks.length - 1].number + 1;
+    }
+    return 1;
+  }
+
   const [body, setBody] = React.useState({
     album_id: id,
-    number: numberTracks[numberTracks.length - 1].number + 1,
+    number: setNumber(numberTracks),
     title: '',
     duration: ''
   });
@@ -49,7 +56,7 @@ const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
 
   return (
     <Modal
-      title="Adicionar uma nova faixa"
+      title="Adicionar uma nova faixa "
       handleSubmitValues={handleAddFaixa}
     >
       <Input 
