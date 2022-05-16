@@ -1,6 +1,7 @@
 import React from "react";
+import { GET_ALBUNS } from "../Service/api";
 
-const useFetch = (buscar) => {
+const useFetch = (target) => {
   const [discografia, setDiscografia] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [tracks, setTrack] = React.useState(null);
@@ -8,15 +9,8 @@ const useFetch = (buscar) => {
   React.useEffect(() => {
     async function getAlbuns(){
       try {
-        const response = await fetch(`https://tiao.supliu.com.br/api/album?keyword=${buscar}`,
-          {
-            method: 'GET',
-            headers: {
-              'Content-type': 'application/json',
-              'Authorization': 'laminas533@gmail.com'
-            }
-          }
-        )
+        const { url, option } = GET_ALBUNS(target);
+        const response = await fetch(url, option);
         const data = await response.json();
         setDiscografia(data)
       }
@@ -28,7 +22,7 @@ const useFetch = (buscar) => {
       }
     }
     getAlbuns();
-  }, [buscar, tracks]);
+  }, [target, tracks]);
 
   return { discografia, loading, setTrack }
 }

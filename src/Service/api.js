@@ -1,8 +1,8 @@
 const urlBase = 'https://tiao.supliu.com.br/api';
 
-export function GET_ALBUNS(){
+export function GET_ALBUNS(search){
   return ({
-    url: urlBase + '/album',
+    url: `https://tiao.supliu.com.br/api/album?keyword=${search}`,
     option: {
       method: 'GET',
       headers: {
