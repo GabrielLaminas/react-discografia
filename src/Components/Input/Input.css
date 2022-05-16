@@ -1,0 +1,12 @@
+.Input_label{
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.Input{
+  width: 100%;
+  box-sizing: border-box;
+  margin: 8px 0 20px 0;
+  padding: 8px 16px;
+}

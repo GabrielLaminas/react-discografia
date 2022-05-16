@@ -2,6 +2,7 @@ import React from 'react';
 import './ModalAddFaixa.css';
 
 import { ADICIONAR_FAIXA } from '../../Service/api';
+import Input from '../../Components/Input/Input';
 
 const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
   const [body, setBody] = React.useState({
@@ -50,19 +51,17 @@ const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
         className='ModalAddFaixa__container__form'
         onSubmit={handleAddFaixa}
       >
-        <label htmlFor="title">Nome da Faixa</label>
-        <input 
+        <Input 
+          label="Nome da Faixa"
           type="text"
-          name="title"
           id="title"
           value={body.title}
           onChange={handleChangeBody}
         />
 
-        <label htmlFor="duration">Duração da Faixa</label>
-        <input 
+        <Input 
+          label="Duração da Faixa"
           type="number"
-          name="duration"
           id="duration"
           value={body.duration}
           onChange={handleChangeBody}

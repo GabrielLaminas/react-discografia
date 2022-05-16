@@ -4,6 +4,7 @@ import './Modal.css';
 import { useNavigate } from 'react-router-dom';
 
 import { POST_ALBUNS } from '../../Service/api';
+import Input from '../../Components/Input/Input';
 
 const Modal = ({setModal}) => {
   const navigate = useNavigate();
@@ -50,23 +51,21 @@ const Modal = ({setModal}) => {
         className='Modal__container__form'
         onSubmit={handleClickCreateAlbum}
       >
-        <label htmlFor="name">Nome</label>
-        <input 
+        <Input 
+          label="Nome"
           type="text"
           id="name"
-          name="name"
           value={body.name}
           onChange={handleChangeBody}
         />
 
-        <label htmlFor="year">Ano</label>
-        <input 
+        <Input 
+          label="Ano"
           type="text"
           id="year"
-          name="year"
           value={body.year}
           onChange={handleChangeBody}
-        />
+        />  
 
         <div className='Modal__container__buttons'>
           {body.name && body.year 
@@ -76,16 +75,16 @@ const Modal = ({setModal}) => {
               </button>
             )
           : (
-            <button
-              style={{
-                opacity: 0.5, 
-                pointerEvents: 'none'
-              }}
-              className='Buttons--confirm'
-            >
-              Criar
-            </button>
-          )
+              <button
+                style={{
+                  opacity: 0.5, 
+                  pointerEvents: 'none'
+                }}
+                className='Buttons--confirm'
+              >
+                Criar
+              </button>
+            )
           }
 
           <button 

@@ -17,19 +17,6 @@
   border-radius: 4px;
 }
 
-.Modal__container__form label{
-  display: block;
-  font-size: 1.125rem;
-  font-weight: 500;
-}
-
-.Modal__container__form input{
-  width: 100%;
-  box-sizing: border-box;
-  margin: 8px 0 20px 0;
-  padding: 8px 16px;
-}
-
 .Modal__container__buttons {
   display: flex;
   gap: 20px;

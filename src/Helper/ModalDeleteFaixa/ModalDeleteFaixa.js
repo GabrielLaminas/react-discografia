@@ -2,6 +2,7 @@ import React from 'react';
 import './ModalDeleteFaixa.css';
 
 import { DELETE_FAIXA } from '../../Service/api';
+import Input from '../../Components/Input/Input';
 
 const ModalDeleteFaixa = ({setModal, setTrack, numberTracks}) => {
   const [idFaixa, setIdFaixa] = React.useState('');
@@ -32,14 +33,12 @@ const ModalDeleteFaixa = ({setModal, setTrack, numberTracks}) => {
         className='ModalDeleteFaixa__container__form'
         onSubmit={handleDeleteFaixa}
       >
-        
-        <label htmlFor="id">Número da faixa</label>
-        <input 
+        <Input 
+          label="Número da faixa"
           type="number"
           id="id"
-          name="id"
           value={idFaixa}
-          onChange={({target}) => setIdFaixa(target.value)}
+          setValue={setIdFaixa}
         />
 
         <div className='ModalDeleteFaixa__container__buttons'>
