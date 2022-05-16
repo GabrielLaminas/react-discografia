@@ -16,7 +16,7 @@ const ModalDeleteFaixa = ({setModal, setTrack, numberTracks}) => {
         const data = await response.json();
 
         if(data){
-          setTrack(numberTracks);
+          setTrack(numberTracks.length);
           setModal(false);
         }
       }

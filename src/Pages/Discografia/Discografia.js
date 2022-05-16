@@ -43,7 +43,7 @@ const Discografia = () => {
           id={id} 
           setModal={setModal}
           setTrack={setTrack} 
-          numberTracks={dataAlbum?.tracks.length}   
+          numberTracks={dataAlbum?.tracks}   
         />
       )}
 
@@ -51,7 +51,7 @@ const Discografia = () => {
         <ModalDeleteFaixa 
           setModal={setModal} 
           setTrack={setTrack} 
-          numberTracks={dataAlbum?.tracks.length} 
+          numberTracks={dataAlbum?.tracks} 
         />
       )}
 

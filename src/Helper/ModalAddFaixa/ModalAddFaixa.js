@@ -6,16 +6,12 @@ import { ADICIONAR_FAIXA } from '../../Service/api';
 const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
   const [body, setBody] = React.useState({
     album_id: id,
-    number: '',
+    number: numberTracks[numberTracks.length - 1].number + 1,
     title: '',
     duration: ''
   });
 
   function handleChangeBody({target}){
-    if(target.name === 'number'){
-      setBody({...body, number: target.value})
-    }
-
     if(target.name === 'title'){
       setBody({...body, title: target.value})
     }
@@ -37,9 +33,9 @@ const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
           duration: Number(body.duration)
         });
         const response = await fetch(url, option);
-        
+
         if(response.ok){
-          setTrack(numberTracks);
+          setTrack(numberTracks.length);
           setModal(false);
         }
       }
@@ -63,15 +59,6 @@ const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
           onChange={handleChangeBody}
         />
 
-        <label htmlFor="number">Número da Faixa</label>
-        <input 
-          type="number"
-          name="number"
-          id="number"
-          value={body.number}
-          onChange={handleChangeBody}
-        />
-
         <label htmlFor="duration">Duração da Faixa</label>
         <input 
           type="number"
@@ -82,7 +69,7 @@ const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
         />
 
         <div className='ModalAddFaixa__container__buttons'>
-          {body.title && body.number && body.duration 
+          {body.title && body.duration 
           ? (
               <button className='Button--confirm'>
                 Confirmar
