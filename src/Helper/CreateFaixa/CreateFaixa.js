@@ -1,12 +1,12 @@
 import React from 'react';
-import './ModalAddFaixa.css';
+import './CreateFaixa.css';
 
 import { ADICIONAR_FAIXA } from '../../Service/api';
 
 import Input from '../../Components/Input/Input';
 import Modal from '../../Components/Modal/Modal';
 
-const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
+const CreateFaixa = ({id, setModal, setTrack, numberTracks}) => {
   const setNumber = (numberTracks) => {
     if(numberTracks.length > 0){
       return numberTracks[numberTracks.length - 1].number + 1;
@@ -109,4 +109,4 @@ const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
   );
 }
 
-export default ModalAddFaixa;
+export default CreateFaixa;

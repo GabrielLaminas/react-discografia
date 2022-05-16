@@ -1,12 +1,12 @@
 import React from 'react';
-import './ModalDelete.css';
+import './DeleteAlbum.css';
 
 import { useNavigate } from 'react-router-dom';
 import { DELETE_ALBUM } from '../../Service/api';
 
 import Modal from '../../Components/Modal/Modal';
 
-const ModalDelete = ({id, setModal}) => {
+const DeleteAlbum = ({id, setModal}) => {
   const navigate = useNavigate();
 
   async function handleDeleteAlbum(e){
@@ -50,4 +50,4 @@ const ModalDelete = ({id, setModal}) => {
   )
 }
 
-export default ModalDelete;
+export default DeleteAlbum;

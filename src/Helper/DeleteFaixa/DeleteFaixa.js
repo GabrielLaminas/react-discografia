@@ -1,12 +1,12 @@
 import React from 'react';
-import './ModalDeleteFaixa.css';
+import './DeleteFaixa.css';
 
 import { DELETE_FAIXA } from '../../Service/api';
 
 import Input from '../../Components/Input/Input';
 import Modal from '../../Components/Modal/Modal';
 
-const ModalDeleteFaixa = ({setModal, setTrack, numberTracks}) => {
+const DeleteFaixa = ({setModal, setTrack, numberTracks}) => {
   const [idFaixa, setIdFaixa] = React.useState('');
 
   async function handleDeleteFaixa(e){
@@ -76,4 +76,4 @@ const ModalDeleteFaixa = ({setModal, setTrack, numberTracks}) => {
   )
 }
 
-export default ModalDeleteFaixa;
+export default DeleteFaixa;

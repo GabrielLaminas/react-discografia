@@ -6,9 +6,9 @@ import './Discografia.css';
 import { Link, useParams } from 'react-router-dom';
 import Tracks from '../../Layout/Tracks/Tracks';
 
-import ModalDelete from '../../Helper/ModalDelete/ModalDelete';
-import ModalAddFaixa from '../../Helper/ModalAddFaixa/ModalAddFaixa';
-import ModalDeleteFaixa from '../../Helper/ModalDeleteFaixa/ModalDeleteFaixa';
+import DeleteAlbum from '../../Helper/DeleteAlbum/DeleteAlbum';
+import CreateFaixa from '../../Helper/CreateFaixa/CreateFaixa';
+import DeleteFaixa from '../../Helper/DeleteFaixa/DeleteFaixa';
 
 import useFetch from '../../hook/useFetch';
 import Loading from '../../Helper/Loading/Loading';
@@ -32,14 +32,14 @@ const Discografia = () => {
   return (
     <>
       {modal.type === 'deleteAlbum' && (
-        <ModalDelete 
+        <DeleteAlbum
           id={id} 
           setModal={setModal} 
         />
       )}
 
       {modal.type ==='createFaixa' && (
-        <ModalAddFaixa 
+        <CreateFaixa 
           id={id} 
           setModal={setModal}
           setTrack={setTrack} 
@@ -48,7 +48,7 @@ const Discografia = () => {
       )}
 
       {modal.type ==='deleteFaixa' && (
-        <ModalDeleteFaixa 
+        <DeleteFaixa
           setModal={setModal} 
           setTrack={setTrack} 
           numberTracks={dataAlbum?.tracks} 
