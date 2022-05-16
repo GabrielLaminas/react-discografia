@@ -3,6 +3,7 @@ import React from "react";
 const useFetch = (buscar) => {
   const [discografia, setDiscografia] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
+  const [tracks, setTrack] = React.useState(null);
 
   React.useEffect(() => {
     async function getAlbuns(){
@@ -27,9 +28,9 @@ const useFetch = (buscar) => {
       }
     }
     getAlbuns();
-  }, [buscar]);
+  }, [buscar, tracks]);
 
-  return { discografia, loading }
+  return { discografia, loading, setTrack }
 }
 
 export default useFetch;

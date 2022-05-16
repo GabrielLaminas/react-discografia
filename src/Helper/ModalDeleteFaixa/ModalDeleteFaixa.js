@@ -1,12 +1,10 @@
 import React from 'react';
 import './ModalDeleteFaixa.css';
 
-import { useNavigate } from 'react-router-dom';
 import { DELETE_FAIXA } from '../../Service/api';
 
-const ModalDeleteFaixa = ({id, setModal}) => {
+const ModalDeleteFaixa = ({setModal, setTrack, numberTracks}) => {
   const [idFaixa, setIdFaixa] = React.useState('');
-  const navigate = useNavigate();
 
   async function handleDeleteFaixa(e){
     e.preventDefault();
@@ -18,7 +16,7 @@ const ModalDeleteFaixa = ({id, setModal}) => {
         const data = await response.json();
 
         if(data){
-          navigate(`/discografia/${id}`);
+          setTrack(numberTracks);
           setModal(false);
         }
       }

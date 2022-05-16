@@ -1,18 +1,15 @@
 import React from 'react';
 import './ModalAddFaixa.css';
 
-import { useNavigate } from 'react-router-dom';
 import { ADICIONAR_FAIXA } from '../../Service/api';
 
-const ModalAddFaixa = ({id, setModal}) => {
+const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
   const [body, setBody] = React.useState({
     album_id: id,
     number: '',
     title: '',
     duration: ''
-  })
-
-  const navigate = useNavigate();
+  });
 
   function handleChangeBody({target}){
     if(target.name === 'number'){
@@ -42,8 +39,8 @@ const ModalAddFaixa = ({id, setModal}) => {
         const response = await fetch(url, option);
         
         if(response.ok){
-          navigate(`/discografia/${id}`);
-          setModal(false)
+          setTrack(numberTracks);
+          setModal(false);
         }
       }
     } catch (error) {

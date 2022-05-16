@@ -15,14 +15,15 @@ import Loading from '../../Helper/Loading/Loading';
 
 const Discografia = () => {
   const { id } = useParams();
-  const { discografia, loading } = useFetch('');
+  const { discografia, loading, setTrack } = useFetch('');
   const [modal, setModal] = React.useState({
     status: false,
     type: '',
   });
 
   function filterIdAlbum(){
-    const filterAlbum = discografia?.data.find((album) => album.id === Number(id))
+    const filterAlbum 
+      = discografia?.data.find((album) => album.id === Number(id))
     return filterAlbum;
   }
 
@@ -30,9 +31,29 @@ const Discografia = () => {
 
   return (
     <>
-      {modal.type === 'deleteAlbum' && <ModalDelete id={id} setModal={setModal} />}
-      {modal.type ==='createFaixa' && <ModalAddFaixa id={id} setModal={setModal} />}
-      {modal.type ==='deleteFaixa' && <ModalDeleteFaixa id={id} setModal={setModal} />}
+      {modal.type === 'deleteAlbum' && (
+        <ModalDelete 
+          id={id} 
+          setModal={setModal} 
+        />
+      )}
+
+      {modal.type ==='createFaixa' && (
+        <ModalAddFaixa 
+          id={id} 
+          setModal={setModal}
+          setTrack={setTrack} 
+          numberTracks={dataAlbum?.tracks.length}   
+        />
+      )}
+
+      {modal.type ==='deleteFaixa' && (
+        <ModalDeleteFaixa 
+          setModal={setModal} 
+          setTrack={setTrack} 
+          numberTracks={dataAlbum?.tracks.length} 
+        />
+      )}
 
       <main className='main__container'>
         <header className='Header__discografia'>
