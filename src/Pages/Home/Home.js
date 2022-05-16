@@ -3,8 +3,8 @@ import './Home.css';
 
 import Header from '../../Layout/Header/Header';
 import FormSearch from '../../Layout/Form/FormSearch';
-import CreateButton from '../../Helper/CreateAlbum/CreateButton';
-import Modal from '../../Helper/Modal/Modal';
+import CreateAlbum from '../../Helper/CreateAlbum/CreateAlbum';
+import ButtonCreateAlbum from '../../Helper/ButtonCreateAlbum/ButtonCreateAlbum';
 import Albuns from '../../Layout/Albuns/Albuns';
 
 import useFetch from '../../hook/useFetch';
@@ -20,12 +20,14 @@ const Home = () => {
 
   return (
     <>
-      {modal.type === 'createAlbum' && <Modal setModal={setModal} />}
+      {modal.type === 'createAlbum' && (
+        <CreateAlbum setModal={setModal} />
+      )}
 
       <main className='main__container'>
         <Header />
         <FormSearch setSearch={setSearch} />
-        <CreateButton text="Criar Álbum" setModal={setModal} />
+        <ButtonCreateAlbum text="Criar Álbum" setModal={setModal} />
         {loading && <Loading />}
         {discografia?.data && <Albuns album={discografia?.data} /> }
       </main>

@@ -4,6 +4,8 @@ import './ModalDelete.css';
 import { useNavigate } from 'react-router-dom';
 import { DELETE_ALBUM } from '../../Service/api';
 
+import Modal from '../../Components/Modal/Modal';
+
 const ModalDelete = ({id, setModal}) => {
   const navigate = useNavigate();
 
@@ -25,30 +27,26 @@ const ModalDelete = ({id, setModal}) => {
   }
 
   return (
-    <div className='ModalDelete__container'>
-      <form 
-        className='ModalDelete__container__form'
-        onSubmit={handleDeleteAlbum}
+    <Modal
+        title="Quer excluir o álbum?"
+        handleSubmitValues={handleDeleteAlbum}
       >
-        <h2>Quer excluir o álbum?</h2>
-
-        <div className='ModalDelete__container__buttons'>
-          <button className='Button--confirm'>
-            Confirmar
-          </button>
-          
-          <button 
-            className='Button--cancel'
-            onClick={(e) => {
-              e.preventDefault();
-              setModal(false);
-            }}
-          >
-            Cancelar
-          </button>
-        </div>
-      </form>
-    </div>
+      <div className='ModalDelete__container__buttons'>
+        <button className='Button--confirm'>
+          Confirmar
+        </button>
+        
+        <button 
+          className='Button--cancel'
+          onClick={(e) => {
+            e.preventDefault();
+            setModal(false);
+          }}
+        >
+          Cancelar
+        </button>
+      </div>
+    </Modal>
   )
 }
 

@@ -2,7 +2,9 @@ import React from 'react';
 import './ModalAddFaixa.css';
 
 import { ADICIONAR_FAIXA } from '../../Service/api';
+
 import Input from '../../Components/Input/Input';
+import Modal from '../../Components/Modal/Modal';
 
 const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
   const [body, setBody] = React.useState({
@@ -46,60 +48,58 @@ const ModalAddFaixa = ({id, setModal, setTrack, numberTracks}) => {
   }
 
   return (
-    <div className='ModalAddFaixa__container'>
-      <form 
-        className='ModalAddFaixa__container__form'
-        onSubmit={handleAddFaixa}
-      >
-        <Input 
-          label="Nome da Faixa"
-          type="text"
-          id="title"
-          value={body.title}
-          onChange={handleChangeBody}
-        />
+    <Modal
+      title="Adicionar uma nova faixa"
+      handleSubmitValues={handleAddFaixa}
+    >
+      <Input 
+        label="Nome da Faixa"
+        type="text"
+        id="title"
+        value={body.title}
+        onChange={handleChangeBody}
+      />
 
-        <Input 
-          label="Duração da Faixa"
-          type="number"
-          id="duration"
-          value={body.duration}
-          onChange={handleChangeBody}
-        />
+      <Input 
+        label="Duração da Faixa"
+        type="number"
+        id="duration"
+        value={body.duration}
+        onChange={handleChangeBody}
+      />
 
-        <div className='ModalAddFaixa__container__buttons'>
-          {body.title && body.duration 
-          ? (
-              <button className='Button--confirm'>
-                Confirmar
-              </button>
-            )
-          : (
-              <button
-                style={{
-                  opacity: 0.5, 
-                  pointerEvents: 'none'
-                }}
-                className='Button--confirm'
-              >
-                Confirmar
-              </button>
-            )
-          }
+      <div className='ModalAddFaixa__container__buttons'>
+        {body.title && body.duration 
+        ? (
+            <button className='Button--confirm'>
+              Confirmar
+            </button>
+          )
+        : (
+            <button
+              style={{
+                opacity: 0.5, 
+                pointerEvents: 'none'
+              }}
+              className='Button--confirm'
+            >
+              Confirmar
+            </button>
+          )
+        }
           
-          <button 
-            className='Button--cancel'
-            onClick={(e) => {
-              e.preventDefault();
-              setModal(false);
-            }}
-          >
-            Cancelar
-          </button>
-        </div>
-      </form>
-    </div>
-  )
+        <button 
+          className='Button--cancel'
+          onClick={(e) => {
+            e.preventDefault();
+            setModal(false);
+          }}
+        >
+          Cancelar
+        </button>
+      </div>
+    </Modal>
+  );
 }
 
 export default ModalAddFaixa;

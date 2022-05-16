@@ -2,7 +2,9 @@ import React from 'react';
 import './ModalDeleteFaixa.css';
 
 import { DELETE_FAIXA } from '../../Service/api';
+
 import Input from '../../Components/Input/Input';
+import Modal from '../../Components/Modal/Modal';
 
 const ModalDeleteFaixa = ({setModal, setTrack, numberTracks}) => {
   const [idFaixa, setIdFaixa] = React.useState('');
@@ -28,51 +30,49 @@ const ModalDeleteFaixa = ({setModal, setTrack, numberTracks}) => {
   }
 
   return (
-    <div className='ModalDeleteFaixa__container'>
-      <form 
-        className='ModalDeleteFaixa__container__form'
-        onSubmit={handleDeleteFaixa}
-      >
-        <Input 
-          label="Número da faixa"
-          type="number"
-          id="id"
-          value={idFaixa}
-          setValue={setIdFaixa}
-        />
+    <Modal
+      title="Quer excluir a faixa?"
+      handleSubmitValues={handleDeleteFaixa}
+    >
+      <Input 
+        label="Número da faixa"
+        type="number"
+        id="id"
+        value={idFaixa}
+        setValue={setIdFaixa}
+      />
 
-        <div className='ModalDeleteFaixa__container__buttons'>
-          {idFaixa 
-          ? (
-              <button className='Button--confirm'>
-                Confirmar
-              </button>
-            )
-          : (
-              <button
-                style={{
-                  opacity: 0.5, 
-                  pointerEvents: 'none'
-                }}
-                className='Button--confirm'
-              >
-                Confirmar
-              </button>
-            )
-          }
-          
-          <button 
-            className='Button--cancel'
-            onClick={(e) => {
-              e.preventDefault();
-              setModal(false);
-            }}
-          >
-            Cancelar
-          </button>
-        </div>
-      </form>
-    </div>
+      <div className='ModalDeleteFaixa__container__buttons'>
+        {idFaixa 
+        ? (
+            <button className='Button--confirm'>
+              Confirmar
+            </button>
+          )
+        : (
+            <button
+              style={{
+                opacity: 0.5, 
+                pointerEvents: 'none'
+              }}
+              className='Button--confirm'
+            >
+              Confirmar
+            </button>
+          )
+        }
+        
+        <button 
+          className='Button--cancel'
+          onClick={(e) => {
+            e.preventDefault();
+            setModal(false);
+          }}
+        >
+          Cancelar
+        </button>
+      </div>  
+    </Modal>
   )
 }
 

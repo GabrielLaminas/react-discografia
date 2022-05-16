@@ -1,14 +1,14 @@
 import React from 'react';
-import './CreateButton.css';
+import './ButtonCreateAlbum.css';
 
-const CreateButton = ({text, setModal}) => {
+const ButtonCreateAlbum = ({text, setModal}) => {
 
   function handleModal(e){
     e.preventDefault()
     setModal((modal) => !modal)
     setModal((modal) => ({state: !modal.state, type: 'createAlbum'}))
   }
-
+  
   return (
     <div className='CreateButton__container'>
       <button onClick={handleModal}>{text}</button>
@@ -16,4 +16,4 @@ const CreateButton = ({text, setModal}) => {
   )
 }
 
-export default CreateButton;
+export default ButtonCreateAlbum;
