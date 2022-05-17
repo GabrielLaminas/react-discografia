@@ -3,7 +3,7 @@ import './Tracks.css';
 
 const Tracks = ({tracks}) => {
   return (
-    <div>
+    <article>
       {tracks.length > 0 
       ? (
           <div className='Tracks__grid'>
@@ -20,13 +20,13 @@ const Tracks = ({tracks}) => {
       }
 
       {tracks?.map((track) => (
-        <div key={track.id} className='Tracks__grid'>
-          <p>{track.id}</p>
-          <p>{track.title}</p>
-          <p>{track.duration}</p>
-        </div>
+        <ul key={track.id} className='Tracks__grid'>
+          <li>{track.id}</li>
+          <li>{track.title}</li>
+          <li>{String(track.duration)[0].concat(':', String(track.duration).slice(1))}</li>
+        </ul>
       ))}
-    </div>
+    </article>
   )
 }
 
