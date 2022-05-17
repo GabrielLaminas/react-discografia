@@ -11,24 +11,31 @@ import {
 
 const DeleteFaixa = ({setModal, setTrack, numberTracks}) => {
   const [idFaixa, setIdFaixa] = React.useState('');
+  const [error, setError] = React.useState(null);
+  const findId = numberTracks.find(({id}) => id === Number(idFaixa))?.id
 
   async function handleDeleteFaixa(e){
     e.preventDefault();
     
     try {
-      if(idFaixa){
+      if(Number(idFaixa) === findId){
+        setError(null)
         const {url, option} = DELETE_FAIXA(idFaixa);
+        console.log(url)
         const response = await fetch(url, option);
         const data = await response.json();
-
+        console.log(response)
         if(data){
           setTrack(numberTracks.length);
           setModal(false);
         }
       }
+      else{
+        setError('Informe o número correto da faixa.')
+      }
     } 
     catch (error) {
-      console.log(error);
+      setError(error);
     }
   }
 
@@ -45,6 +52,8 @@ const DeleteFaixa = ({setModal, setTrack, numberTracks}) => {
         value={idFaixa}
         setValue={setIdFaixa}
       />
+      {!findId && idFaixa && <small>{error}</small>}
+
       <ModalContainerButtons>
         {idFaixa 
           ? <Button text="Confirmar" />

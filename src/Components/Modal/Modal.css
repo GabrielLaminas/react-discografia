@@ -27,6 +27,13 @@
   gap: 20px;
 }
 
+.Modal__container__form small{
+  margin: -10px 0 20px 0;
+  display: block;
+  color: #d63031;
+  letter-spacing: 0.3px;
+}
+
 @media screen and (max-width: 480px) {
   .Modal__container__form{
     padding: 24px;
