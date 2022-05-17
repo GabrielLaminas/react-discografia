@@ -4,6 +4,9 @@
 
 .CreateButton__container button{
   padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background-color: #27ae60;
   color: white;
   font-size: 1rem;

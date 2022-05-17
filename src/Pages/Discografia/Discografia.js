@@ -12,6 +12,8 @@ import DeleteFaixa from '../../Helper/DeleteFaixa/DeleteFaixa';
 import useFetch from '../../hook/useFetch';
 import Loading from '../../Helper/Loading/Loading';
 
+import 'boxicons';
+
 const Discografia = () => {
   const { id } = useParams();
   const { discografia, loading, setTrack } = useFetch('');
@@ -56,7 +58,8 @@ const Discografia = () => {
 
       <main className='main__container'>
         <header className='Header__discografia'>
-          <Link to="/" style={{backgroundColor: '#333333'}}>
+          <Link to="/">
+            <box-icon name='home-alt-2' />
             Tela Principal
           </Link>
           <h1>Discografia</h1>
@@ -67,6 +70,7 @@ const Discografia = () => {
             style={{backgroundColor: '#d63031'}}
             onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteAlbum'}))}
           >
+            <box-icon name='folder-minus' color='white' />
             Deletar Álbum
           </button>
 
@@ -74,6 +78,7 @@ const Discografia = () => {
             style={{backgroundColor: '#0984E3'}}
             onClick={() => setModal((modal) => ({state: !modal.state, type: 'createFaixa'}))}
           >
+            <box-icon name='list-plus' color='white' />
             Adicionar Faixa
           </button>
 
@@ -82,6 +87,7 @@ const Discografia = () => {
               style={{backgroundColor: '#d63031'}} 
               onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteFaixa'}))}
             >
+              <box-icon name='list-minus' color='white' />
               Deletar Faixa
             </button>
           )}

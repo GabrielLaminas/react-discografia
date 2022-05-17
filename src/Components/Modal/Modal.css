@@ -14,8 +14,11 @@
   width: 400px;
   margin: 16px;
   padding: 24px 32px;
+  position: relative;
   background-color: white;
   border-radius: 4px;
+  animation: showTop 1s forwards;
+  transition: all .8s;
 }
 
 .Modal__container__form h1{
@@ -32,6 +35,17 @@
   display: block;
   color: #d63031;
   letter-spacing: 0.3px;
+}
+
+@keyframes showTop {
+  from{
+    top: -200px;
+    opacity: 0;
+  }
+  to{
+    top: 0;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 480px) {

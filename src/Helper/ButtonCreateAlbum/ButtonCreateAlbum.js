@@ -1,5 +1,6 @@
 import React from 'react';
 import './ButtonCreateAlbum.css';
+import 'boxicons';
 
 const ButtonCreateAlbum = ({text, setModal}) => {
 
@@ -11,7 +12,10 @@ const ButtonCreateAlbum = ({text, setModal}) => {
   
   return (
     <section className='CreateButton__container'>
-      <button onClick={handleModal}>{text}</button>
+      <button onClick={handleModal}>
+        <box-icon name='folder-plus' color='white' />
+        {text}
+      </button>
     </section>
   )
 }
