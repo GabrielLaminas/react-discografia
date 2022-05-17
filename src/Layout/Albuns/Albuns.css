@@ -1,6 +1,6 @@
 .albuns__container{
   height: calc(100vh - 330px); 
-  padding: 8px 20px;
+  padding: 0px 20px;
   overflow-y: scroll;
 }
 

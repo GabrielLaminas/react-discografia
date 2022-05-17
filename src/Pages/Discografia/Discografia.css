@@ -2,7 +2,7 @@
 .Section__discografia{
   padding: 0 20px;
   display: flex;
-  gap: 16px;
+  gap: 24px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -21,7 +21,7 @@
 }
 
 .Header__discografia a{
-  padding: 16px 24px;
+  padding: 16px 0;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -39,17 +39,36 @@
   fill: rgba(0, 0, 0, .5);
 }
 
+.Section__discografia{
+  justify-content: center;
+}
+
 .Section__discografia button{
-  padding: 10px 24px;
+  padding: 10px 0;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: white;
-  font-size: 0.875rem;
-  text-decoration: none;
+  background-color: transparent;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
   border-radius: 4px;
   cursor: pointer;
   border: 0;
+  transition: all .2s;
+}
+
+.Section__discografia .Discografia__deleteAlbum:hover{
+  color: #d63031;
+  fill: #d63031;
+}
+.Section__discografia .Discografia__adicionarFaixa:hover{
+  color: #27ae60;
+  fill: #27ae60;
+}
+.Section__discografia .Discografia__deleteFaixa:hover{
+  color: #d63031;
+  fill: #d63031;
 }
 
 .Discografia__container{
@@ -70,5 +89,16 @@
   .Header__discografia h1{
     font-weight: 400;
     font-size: 2rem;
+  }
+  
+  .Discografia__deleteAlbum span,
+  .Discografia__adicionarFaixa span,
+  .Discografia__deleteFaixa span,
+  .Header__discografia a span{
+    display: none;
+  }
+
+  .Discografia__container h1{
+    font-size: 1.25rem;
   }
 }

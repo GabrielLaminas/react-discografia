@@ -60,35 +60,35 @@ const Discografia = () => {
         <header className='Header__discografia'>
           <Link to="/">
             <box-icon name='home-alt-2' />
-            Tela Principal
+            <span>Tela Principal</span>
           </Link>
           <h1>Discografia</h1>
         </header>
 
         <section className='Section__discografia'>
           <button  
-            style={{backgroundColor: '#d63031'}}
+            className='Discografia__deleteAlbum'
             onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteAlbum'}))}
           >
-            <box-icon name='folder-minus' color='white' />
-            Deletar Álbum
+            <box-icon name='folder-minus'/>
+            <span>Deletar Álbum</span>  
           </button>
 
           <button 
-            style={{backgroundColor: '#0984E3'}}
+            className='Discografia__adicionarFaixa'
             onClick={() => setModal((modal) => ({state: !modal.state, type: 'createFaixa'}))}
           >
-            <box-icon name='list-plus' color='white' />
-            Adicionar Faixa
+            <box-icon name='list-plus' />
+            <span>Adicionar Faixa</span>
           </button>
 
           {dataAlbum?.tracks.length > 0 && (
             <button
-              style={{backgroundColor: '#d63031'}} 
+              className='Discografia__deleteFaixa'
               onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteFaixa'}))}
             >
-              <box-icon name='list-minus' color='white' />
-              Deletar Faixa
+              <box-icon name='list-minus'/>
+              <span>Deletar Faixa</span>
             </button>
           )}
         </section>
