@@ -2,7 +2,6 @@ import React from 'react';
 import './Tracks.css';
 
 const Tracks = ({tracks}) => {
-
   return (
     <div>
       {tracks.length > 0 

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../Layout/Albuns/Albuns.css';
 import '../Home/Home.css';
 import './Discografia.css';
 
@@ -57,7 +56,9 @@ const Discografia = () => {
 
       <main className='main__container'>
         <header className='Header__discografia'>
-          <Link to="/" style={{backgroundColor: '#333333'}}>Tela Principal</Link>
+          <Link to="/" style={{backgroundColor: '#333333'}}>
+            Tela Principal
+          </Link>
           <h1>Discografia</h1>
         </header>
 
@@ -89,7 +90,7 @@ const Discografia = () => {
         {loading && <Loading />}
         
         {dataAlbum && (
-          <section className='albuns__container'>
+          <section className='Discografia__container'>
             <h2>
               Álbum: {dataAlbum.name}, {dataAlbum.year}
             </h2>
