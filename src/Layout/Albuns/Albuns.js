@@ -7,16 +7,19 @@ import { Link } from 'react-router-dom';
 const Albuns = ({album}) => {
   return (
     <section className='albuns__container'>
+      <ul>
       {album?.map((albuns) => (
-        <Link 
-          to={`/discografia/${albuns.id}`} 
-          key={albuns.id} 
-          className="albuns__album"
-        >
-          <h2>Álbum: {albuns.name}, {albuns.year}</h2>
-          <Tracks tracks={albuns?.tracks} />
-        </Link>
+        <li key={albuns.id} >
+          <Link 
+            to={`/discografia/${albuns.id}`}
+            className="albuns__album" 
+          >
+            <h2>Álbum: {albuns.name}, {albuns.year}</h2>
+            <Tracks tracks={albuns?.tracks} />
+          </Link>
+        </li>
       ))}
+      </ul>
     </section>
   )
 }

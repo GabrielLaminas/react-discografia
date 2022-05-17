@@ -10,9 +10,9 @@ const ButtonCreateAlbum = ({text, setModal}) => {
   }
   
   return (
-    <div className='CreateButton__container'>
+    <section className='CreateButton__container'>
       <button onClick={handleModal}>{text}</button>
-    </div>
+    </section>
   )
 }
 

@@ -12,6 +12,15 @@
   border-radius: 10px;
 }
 
+.albuns__container ul {
+  margin: 0;
+  padding: 0;
+}
+
+.albuns__container ul li{
+  list-style: none;
+}
+
 .albuns__container .albuns__album{
   padding: 0 10px;
   display: block;
