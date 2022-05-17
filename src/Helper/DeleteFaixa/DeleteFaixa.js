@@ -38,6 +38,7 @@ const DeleteFaixa = ({setModal, setTrack, numberTracks}) => {
         label="Número da faixa"
         type="number"
         id="id"
+        placeholder="Nº: 205"
         value={idFaixa}
         setValue={setIdFaixa}
       />

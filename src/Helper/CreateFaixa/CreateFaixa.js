@@ -71,6 +71,7 @@ const CreateFaixa = ({id, setModal, setTrack, numberTracks}) => {
         label="Duração da Faixa"
         type="number"
         id="duration"
+        placeholder="Ex: 215"
         value={body.duration}
         onChange={handleChangeBody}
       />
