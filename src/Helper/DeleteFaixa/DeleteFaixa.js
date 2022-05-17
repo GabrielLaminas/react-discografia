@@ -21,10 +21,9 @@ const DeleteFaixa = ({setModal, setTrack, numberTracks}) => {
       if(Number(idFaixa) === findId){
         setError(null)
         const {url, option} = DELETE_FAIXA(idFaixa);
-        console.log(url)
         const response = await fetch(url, option);
         const data = await response.json();
-        console.log(response)
+        
         if(data){
           setTrack(numberTracks.length);
           setModal(false);
