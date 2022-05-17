@@ -1,0 +1,25 @@
+.Button__confirm,
+.Button__opacity,
+.Button__cancel{
+  margin: 16px 0;
+  padding: 10px 24px;
+  color: white;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 0;
+}
+
+.Button__confirm{
+  background-color: #27ae60;
+}
+
+.Button__opacity{
+  opacity: 0.5; 
+  pointer-events: 'none';
+  background-color: #27ae60;
+}
+
+.Button__cancel{
+  background-color: #d63031;
+}

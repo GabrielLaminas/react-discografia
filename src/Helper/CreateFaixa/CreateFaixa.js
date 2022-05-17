@@ -1,10 +1,9 @@
 import React from 'react';
-import './CreateFaixa.css';
-
 import { ADICIONAR_FAIXA } from '../../Service/api';
 
 import Input from '../../Components/Input/Input';
-import Modal from '../../Components/Modal/Modal';
+import Modal, { ModalContainerButtons } from '../../Components/Modal/Modal';
+import { Button, ButtonCancel, ButtonOpacity } from '../../Components/Buttons/Buttons';
 
 const CreateFaixa = ({id, setModal, setTrack, numberTracks}) => {
   const setNumber = (numberTracks) => {
@@ -76,36 +75,20 @@ const CreateFaixa = ({id, setModal, setTrack, numberTracks}) => {
         onChange={handleChangeBody}
       />
 
-      <div className='ModalAddFaixa__container__buttons'>
-        {body.title && body.duration 
-        ? (
-            <button className='Button--confirm'>
-              Confirmar
-            </button>
-          )
-        : (
-            <button
-              style={{
-                opacity: 0.5, 
-                pointerEvents: 'none'
-              }}
-              className='Button--confirm'
-            >
-              Confirmar
-            </button>
-          )
+      <ModalContainerButtons>
+        {body.title && body.duration
+          ? <Button text="Confirmar" />
+          : <ButtonOpacity text="Confirmar" />
         }
-          
-        <button 
-          className='Button--cancel'
+
+        <ButtonCancel 
+          text="Cancelar"
           onClick={(e) => {
             e.preventDefault();
             setModal(false);
           }}
-        >
-          Cancelar
-        </button>
-      </div>
+        />
+      </ModalContainerButtons>
     </Modal>
   );
 }

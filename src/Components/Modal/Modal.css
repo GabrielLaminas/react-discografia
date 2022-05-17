@@ -20,3 +20,8 @@
 .Modal__container__form h1{
   margin-bottom: 40px;
 }
+
+.Modal__container__buttons{
+  display: flex;
+  gap: 20px;
+}

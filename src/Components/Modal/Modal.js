@@ -19,4 +19,12 @@ const Modal = ({
   )
 }
 
+export const ModalContainerButtons = ({children}) => {
+  return (
+    <div className='Modal__container__buttons'>
+      {children}
+    </div>
+  )
+}
+
 export default Modal;

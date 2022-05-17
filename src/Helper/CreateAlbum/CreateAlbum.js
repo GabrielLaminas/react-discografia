@@ -1,12 +1,10 @@
 import React from 'react';
-import './CreateAlbum.css';
-
 import { useNavigate } from 'react-router-dom';
-
 import { POST_ALBUNS } from '../../Service/api';
 
 import Input from '../../Components/Input/Input';
-import Modal from '../../Components/Modal/Modal';
+import Modal, { ModalContainerButtons } from '../../Components/Modal/Modal';
+import { Button, ButtonCancel, ButtonOpacity } from '../../Components/Buttons/Buttons';
 
 const CreateAlbum = ({setModal}) => {
   const navigate = useNavigate();
@@ -68,37 +66,21 @@ const CreateAlbum = ({setModal}) => {
         onChange={handleChangeBody}
       />
 
-      <div className='Modal__container__buttons'>
-        {body.name && body.year 
-        ? (
-            <button className='Buttons--confirm'>
-              Criar
-            </button>
-          )
-        : (
-            <button
-              style={{
-                opacity: 0.5, 
-                pointerEvents: 'none'
-              }}
-              className='Buttons--confirm'
-            >
-              Criar
-            </button>
-          )
+      <ModalContainerButtons>
+        {body.name && body.year
+          ? <Button text="Confirmar" />
+          : <ButtonOpacity text="Confirmar" />
         }
 
-        <button 
-          className='Buttons--cancel'
+        <ButtonCancel 
+          text="Cancelar"
           onClick={(e) => {
             e.preventDefault();
             setModal(false);
             navigate("/");
           }}
-        >
-          Cancelar
-        </button>
-      </div>  
+        />
+      </ModalContainerButtons>
     </Modal>
   )
 }

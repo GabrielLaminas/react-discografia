@@ -1,10 +1,13 @@
 import React from 'react';
-import './DeleteFaixa.css';
-
 import { DELETE_FAIXA } from '../../Service/api';
 
 import Input from '../../Components/Input/Input';
-import Modal from '../../Components/Modal/Modal';
+import Modal, { ModalContainerButtons } from '../../Components/Modal/Modal';
+import { 
+  Button, 
+  ButtonCancel, 
+  ButtonOpacity 
+} from '../../Components/Buttons/Buttons';
 
 const DeleteFaixa = ({setModal, setTrack, numberTracks}) => {
   const [idFaixa, setIdFaixa] = React.useState('');
@@ -42,37 +45,20 @@ const DeleteFaixa = ({setModal, setTrack, numberTracks}) => {
         value={idFaixa}
         setValue={setIdFaixa}
       />
-
-      <div className='ModalDeleteFaixa__container__buttons'>
+      <ModalContainerButtons>
         {idFaixa 
-        ? (
-            <button className='Button--confirm'>
-              Confirmar
-            </button>
-          )
-        : (
-            <button
-              style={{
-                opacity: 0.5, 
-                pointerEvents: 'none'
-              }}
-              className='Button--confirm'
-            >
-              Confirmar
-            </button>
-          )
+          ? <Button text="Confirmar" />
+          : <ButtonOpacity text="Confirmar" />
         }
         
-        <button 
-          className='Button--cancel'
+        <ButtonCancel
+          text="Cancelar"
           onClick={(e) => {
             e.preventDefault();
             setModal(false);
           }}
-        >
-          Cancelar
-        </button>
-      </div>  
+        />
+      </ModalContainerButtons>
     </Modal>
   )
 }
