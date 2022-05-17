@@ -12,6 +12,7 @@
 
 .Modal__container__form{
   width: 400px;
+  margin: 16px;
   padding: 24px 32px;
   background-color: white;
   border-radius: 4px;
@@ -24,4 +25,13 @@
 .Modal__container__buttons{
   display: flex;
   gap: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .Modal__container__form{
+    padding: 24px;
+  }  
+  .Modal__container__form h1{
+    font-size: 1.75rem;
+  }
 }

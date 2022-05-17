@@ -16,10 +16,18 @@
 
 .Button__opacity{
   opacity: 0.5; 
-  pointer-events: 'none';
+  pointer-events: none;
   background-color: #27ae60;
 }
 
 .Button__cancel{
+  background-color: transparent;
+  color: #d63031;
+  border: 1px solid #d63031;
+  transition: all .2s;
+}
+
+.Button__cancel:hover{
   background-color: #d63031;
+  color: white;
 }
