@@ -17,7 +17,11 @@
 ## Midia
   Desktop | Mobile
   :---: | :---:
-  [Link Desktop](https://github.com/GabrielLaminas/react-discografia/blob/32ba2c810eda7439eb3459584b3c9ebd84b12a8d/public/React%20Discografia%20Desktop.mp4) | [Link Mobile](https://github.com/GabrielLaminas/react-discografia/blob/32ba2c810eda7439eb3459584b3c9ebd84b12a8d/public/React%20Discografia%20Mobile.mp4)
+  ![HomeDesktop](https://github.com/GabrielLaminas/react-discografia/blob/fc482d5f86f6121bf0d0815bc589e1992cec0f3b/public/desing/HomeDesktop.jpg) | ![HomeMobile](https://github.com/GabrielLaminas/react-discografia/blob/fc482d5f86f6121bf0d0815bc589e1992cec0f3b/public/desing/HomeMobile.jpg)
+  :---: | :---:
+  ![DiscografiaDesktop](https://github.com/GabrielLaminas/react-discografia/blob/fc482d5f86f6121bf0d0815bc589e1992cec0f3b/public/desing/DiscografiaDesktop.jpg) | ![DiscografiaMobile](https://github.com/GabrielLaminas/react-discografia/blob/fc482d5f86f6121bf0d0815bc589e1992cec0f3b/public/desing/DiscografiaMobile.jpg)
+  :---: | :---:
+  [Link download Desktop](https://github.com/GabrielLaminas/react-discografia/blob/fc482d5f86f6121bf0d0815bc589e1992cec0f3b/public/Midia/React%20Discografia%20Desktop.mp4) | [Link download Mobile](https://github.com/GabrielLaminas/react-discografia/blob/fc482d5f86f6121bf0d0815bc589e1992cec0f3b/public/Midia/React%20Discografia%20Mobile.mp4)
   
 ## Link
 
