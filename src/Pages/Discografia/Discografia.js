@@ -76,7 +76,6 @@ const Discografia = () => {
             className='Discografia__deleteAlbum'
             onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteAlbum'}))}
           >
-            {/**<box-icon name='folder-minus'/> */}
             <BiFolderMinus />
             <span>Deletar Álbum</span>  
           </button>
@@ -85,7 +84,7 @@ const Discografia = () => {
             className='Discografia__adicionarFaixa'
             onClick={() => setModal((modal) => ({state: !modal.state, type: 'createFaixa'}))}
           >
-            {/**<box-icon name='list-plus' /> */}
+
             <BiListPlus />
             <span>Adicionar Faixa</span>
           </button>
@@ -95,7 +94,6 @@ const Discografia = () => {
               className='Discografia__deleteFaixa'
               onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteFaixa'}))}
             >
-              {/**<box-icon name='list-minus'/> */}
               <BiListMinus />
               <span>Deletar Faixa</span>
             </button>
