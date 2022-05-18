@@ -64,7 +64,6 @@ const Discografia = () => {
       <main className='main__container'>
         <header className='Header__discografia'>
           <Link to="/">
-            {/**<box-icon name='home-alt-2' /> */}
             <BiHome />
             <span>Tela Principal</span>
           </Link>
