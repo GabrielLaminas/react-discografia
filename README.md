@@ -32,5 +32,5 @@
   - React JS
 
 ## Packages 
-  - [React Router Dom v6](https://reactrouter.com/).
+  - [React Router Dom v6](https://reactrouter.com/)
   - [React-icons](https://react-icons.github.io/react-icons)
