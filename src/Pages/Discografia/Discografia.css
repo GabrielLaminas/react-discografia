@@ -88,6 +88,7 @@
 .Discografia__container::-webkit-scrollbar{
   width: 6px;
 }
+
 .Discografia__container::-webkit-scrollbar-thumb{
   background-color: rgba(155, 155, 155, .4);
   border-radius: 10px;
