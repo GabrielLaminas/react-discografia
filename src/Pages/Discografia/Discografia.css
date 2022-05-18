@@ -39,6 +39,11 @@
   fill: rgba(0, 0, 0, .5);
 }
 
+.Header__discografia svg{
+  width: 32px;
+  height: 32px;
+}
+
 .Section__discografia{
   justify-content: center;
 }
@@ -58,17 +63,20 @@
   transition: all .2s;
 }
 
-.Section__discografia .Discografia__deleteAlbum:hover{
-  color: #d63031;
-  fill: #d63031;
+.Section__discografia button svg{
+  width: 25px;
+  height: 25px;
 }
-.Section__discografia .Discografia__adicionarFaixa:hover{
-  color: #27ae60;
-  fill: #27ae60;
-}
+
+.Section__discografia .Discografia__deleteAlbum:hover,
 .Section__discografia .Discografia__deleteFaixa:hover{
   color: #d63031;
   fill: #d63031;
+}
+
+.Section__discografia .Discografia__adicionarFaixa:hover{
+  color: #27ae60;
+  fill: #27ae60;
 }
 
 .Discografia__container{
@@ -90,7 +98,13 @@
     font-weight: 400;
     font-size: 2rem;
   }
-  
+
+  .Discografia__container h1{
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
   .Discografia__deleteAlbum span,
   .Discografia__adicionarFaixa span,
   .Discografia__deleteFaixa span,
@@ -98,7 +112,12 @@
     display: none;
   }
 
-  .Discografia__container h1{
-    font-size: 1.25rem;
+  .Section__discografia button svg{
+    width: 30px;
+    height: 30px;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, .12);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, .4);
+    border-radius: 50%;
   }
 }

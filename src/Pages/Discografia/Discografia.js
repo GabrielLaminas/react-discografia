@@ -12,7 +12,12 @@ import DeleteFaixa from '../../Helper/DeleteFaixa/DeleteFaixa';
 import useFetch from '../../hook/useFetch';
 import Loading from '../../Helper/Loading/Loading';
 
-import 'boxicons';
+import { 
+  BiHome,
+  BiFolderMinus,
+  BiListPlus,
+  BiListMinus
+} from "react-icons/bi";
 
 const Discografia = () => {
   const { id } = useParams();
@@ -59,7 +64,8 @@ const Discografia = () => {
       <main className='main__container'>
         <header className='Header__discografia'>
           <Link to="/">
-            <box-icon name='home-alt-2' />
+            {/**<box-icon name='home-alt-2' /> */}
+            <BiHome />
             <span>Tela Principal</span>
           </Link>
           <h1>Discografia</h1>
@@ -70,7 +76,8 @@ const Discografia = () => {
             className='Discografia__deleteAlbum'
             onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteAlbum'}))}
           >
-            <box-icon name='folder-minus'/>
+            {/**<box-icon name='folder-minus'/> */}
+            <BiFolderMinus />
             <span>Deletar Álbum</span>  
           </button>
 
@@ -78,7 +85,8 @@ const Discografia = () => {
             className='Discografia__adicionarFaixa'
             onClick={() => setModal((modal) => ({state: !modal.state, type: 'createFaixa'}))}
           >
-            <box-icon name='list-plus' />
+            {/**<box-icon name='list-plus' /> */}
+            <BiListPlus />
             <span>Adicionar Faixa</span>
           </button>
 
@@ -87,7 +95,8 @@ const Discografia = () => {
               className='Discografia__deleteFaixa'
               onClick={() => setModal((modal) => ({state: !modal.state, type: 'deleteFaixa'}))}
             >
-              <box-icon name='list-minus'/>
+              {/**<box-icon name='list-minus'/> */}
+              <BiListMinus />
               <span>Deletar Faixa</span>
             </button>
           )}
